@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -44,6 +46,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -84,7 +87,10 @@
           
             
             
-                <p class="caption"><span class="caption-text">Background</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">Background</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../info/info.html">What are GQ-CNNs?</a></li>
 </ul>
@@ -143,8 +149,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">GQCNN</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GQCNN</a>
+        
       </nav>
 
 
@@ -153,23 +161,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
-    <li>Policy</li>
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Policy</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/api/policy.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/api/policy.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -215,7 +240,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
 <li><strong>sampling</strong> (<em>dict</em>) &#8211; dictionary of parameters for grasp sampling, see gqcnn/image_grasp_sampler.py</li>
 <li><strong>gqcnn_model</strong> (<em>str</em>) &#8211; string path to a trained GQ-CNN model see gqcnn/neural_networks.py</li>
 </ul>
@@ -299,7 +324,7 @@ and returns the grasp with the highest probability of success.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
 <li><strong>num_grasp_samples</strong> (<em>int</em>) &#8211; number of grasps to sample</li>
 <li><strong>gripper_width</strong> (<em>float, optional</em>) &#8211; width of the gripper in meters</li>
 <li><strong>gripper_name</strong> (<em>str, optional</em>) &#8211; name of the gripper</li>
@@ -364,7 +389,7 @@ cross entropy method:
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
 <li><strong>num_seed_samples</strong> (<em>int</em>) &#8211; number of candidate to sample in the initial set</li>
 <li><strong>num_gmm_samples</strong> (<em>int</em>) &#8211; number of candidates to sample on each resampling from the GMMs</li>
 <li><strong>num_iters</strong> (<em>int</em>) &#8211; number of sample-and-refit iterations of CEM</li>
@@ -466,6 +491,7 @@ determine any valid grasps in them.</p>
 <dt id="gqcnn.NoValidGraspsException">
 <em class="property">class </em><code class="descclassname">gqcnn.</code><code class="descname">NoValidGraspsException</code><a class="headerlink" href="#gqcnn.NoValidGraspsException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+<p>Exception for when antipodal point pairs can be found from the depth image but none are valid grasps that can be executed</p>
 </dd></dl>
 
 </div>
@@ -477,6 +503,7 @@ image data.</p>
 <dt id="gqcnn.NoAntipodalPairsFoundException">
 <em class="property">class </em><code class="descclassname">gqcnn.</code><code class="descname">NoAntipodalPairsFoundException</code><a class="headerlink" href="#gqcnn.NoAntipodalPairsFoundException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+<p>Exception for when no antipodal point pairs can be found from the depth image</p>
 </dd></dl>
 
 </div>
@@ -484,15 +511,18 @@ image data.</p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="training.html" class="btn btn-neutral float-right" title="Training" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="training.html" class="btn btn-neutral float-right" title="Training" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="grasping.html" class="btn btn-neutral" title="Grasping" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="grasping.html" class="btn btn-neutral" title="Grasping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -526,7 +556,8 @@ image data.</p>
             VERSION:'0.1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
